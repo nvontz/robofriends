@@ -1,4 +1,3 @@
-import { fromPairs } from "lodash";
 import React, { Component } from 'react';
 
 class ErrorBoundry extends Component {
@@ -7,6 +6,10 @@ class ErrorBoundry extends Component {
         this.state = {
             hasError: false
         }
+    }
+
+    componentDidCatch() {
+        this.setState({hasError: true})
     }
 
     render() {
